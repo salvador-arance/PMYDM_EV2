@@ -1,0 +1,67 @@
+# ==========================================
+# Compilados y artefactos de construcción
+# ==========================================
+# Ignora cualquier carpeta 'build' en la raíz de cada proyecto o dentro de app/
+**/build/
+build/
+app/build/
+*.apk
+*.aab
+*.dex
+*.class
+
+# ==========================================
+# Archivos y cachés de Gradle
+# ==========================================
+.gradle/
+**/.gradle/
+.gradle
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Cachés locales
+.gradletasknamecache
+
+# ==========================================
+# Archivos de configuración del IDE (Android Studio / IntelliJ)
+# ==========================================
+.idea/
+**/.idea/
+*.iml
+*.ipr
+*.iws
+out/
+**/out/
+
+# Excluir configuraciones de compilador o diccionarios del usuario
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# ==========================================
+# Logs y Archivos temporales del sistema
+# ==========================================
+*.log
+captures/
+.externalNativeBuild/
+.cxx/
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# ==========================================
+# Secretos, claves y firmas (Seguridad)
+# ==========================================
+*.jks
+*.keystore
+local.properties
+signing.properties
+google-services.json
+Habitat/
