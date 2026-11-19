@@ -10,11 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
+import android.widget.EditText;
 
 public class DataFragment extends Fragment {
     private DataListener callback;
     Button button;
+    EditText editText;
 
     public DataFragment() {
         // Required empty public constructor
@@ -35,12 +36,13 @@ public class DataFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_data, container, false);
+        editText = view.findViewById(R.id.sendText);
         button = view.findViewById(R.id.btnSendData);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callback.sendData("Hola");
+                callback.sendData(editText.getText().toString());
             }
         });
 

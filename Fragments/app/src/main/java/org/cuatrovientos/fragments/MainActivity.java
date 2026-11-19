@@ -1,5 +1,6 @@
 package org.cuatrovientos.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity implements DataFragment.DataListener {
+    private boolean isMultipanel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +22,23 @@ public class MainActivity extends AppCompatActivity implements DataFragment.Data
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        setMultipanel();
     }
 
     @Override
     public void sendData(String data) {
-        // haremos cosas.
-        DetailsFragment detailsFragment = (DetailsFragment) getSupportFragmentManager().findFragmentById(R.id.detailsFragement);
-        detailsFragment.renderData(data);
+        if (isMultipanel) {
+            DetailsFragment detailsFragment = (DetailsFragment) getSupportFragmentManager().findFragmentById(R.id.detailsFragment);
+            detailsFragment.renderData(data);
+        } else {
+            Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+            intent.putExtra("data", data);
+            startActivity(intent);
+        }
+    }
 
+    public void setMultipanel() {
+        isMultipanel = getSupportFragmentManager().findFragmentById(R.id.detailsFragment) != null;
     }
 }

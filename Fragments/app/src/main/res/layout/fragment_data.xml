@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".DataFragment"
     android:background="#ff99ff">
 
-    <!-- TODO: Update blank fragment layout -->
+    <EditText
+        android:id="@+id/sendText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Mandar al otro lado."/>
 
     <Button
         android:id="@+id/btnSendData"
-        android:layout_height="10dp"
-        android:layout_width="10dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar"/>
 
-</FrameLayout>
+</LinearLayout>
